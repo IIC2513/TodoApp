@@ -7,11 +7,14 @@ const TaskList = props => {
 	const onChangeStatus = e => {
 		const { name, checked } = e.target;
 
+		console.log(name, checked);
+
 		const updateList = list.map(item => ({
 			...item,
 			done: item.id === name ? checked : item.done
 		}));
 		setList(updateList);
+		console.log(updateList);
 	};
 
 	const onClickRemoveItem = e => {
